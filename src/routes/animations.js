@@ -1,11 +1,19 @@
-export const animationDuration = 2000;
+import gsap from 'gsap';
 
-export const enter = (a, b, c) => {
-  console.log('enter:');
-  console.log(a, b, c);
+export const animationDuration = 1000;
+
+export const enter = (elem, path) => {
+  gsap.fromTo(
+    elem,
+    { opacity: 0, duration: animationDuration / 1000 },
+    { opacity: 1 }
+  );
 };
 
-export const exit = (a, b, c) => {
-  console.log('exit:');
-  console.log(a, b, c);
+export const exit = (elem, path) => {
+  gsap.fromTo(
+    elem,
+    { opacity: 1, duration: animationDuration / 1000 },
+    { opacity: 0 }
+  );
 };

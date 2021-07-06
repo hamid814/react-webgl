@@ -1,7 +1,5 @@
-import React from 'react';
-
-const Route = (props, ref) => {
-  return <div ref={ref}>route</div>;
+const Route = () => {
+  return <div>Route</div>;
 };
 
 export default Route;
