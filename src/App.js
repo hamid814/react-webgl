@@ -6,6 +6,8 @@ import './App.css';
 import Home from './routes/home/Home';
 import { default as R } from './routes/route/Route';
 
+import Canvas from './components/canvas/Canvas';
+
 import { enter, exit, animationDuration } from './routes/animations';
 
 const routes = [
@@ -17,6 +19,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      <Canvas />
       <div className="container">
         {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
