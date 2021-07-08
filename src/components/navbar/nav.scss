@@ -1,0 +1,23 @@
+#navbar {
+  position: fixed;
+  font-size: 70px;
+  // left: 0;
+  bottom: calc(100vh - 130px);
+  right: 0;
+  // text-align: right;
+  padding: 20px;
+  // background-image: linear-gradient(to right, #fff, #fff);
+  mix-blend-mode: difference;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 40px;
+    // background-image: linear-gradient(to right, #fff, #fff);
+    // mix-blend-mode: difference;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

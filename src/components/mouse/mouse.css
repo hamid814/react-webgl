@@ -14,6 +14,11 @@
   );
   mix-blend-mode: difference;
   transform: scale(0.75);
+  transition: transform 400ms;
+}
+
+#mouse.active {
+  transform: rotateZ(120deg) scale(2);
 }
 
 #mouse:before,

@@ -1,10 +1,16 @@
 import './mouse.css';
 
-const Mouse = ({ pos }) => {
+import useStore from '../../store/store';
+
+const Mouse = () => {
+  const mousePos = useStore((state) => state.mousePos);
+  const active = useStore((state) => state.mouseActive);
+
   return (
     <div
       id="mouse"
-      style={{ left: pos.x, bottom: window.innerHeight - pos.y }}
+      style={{ left: mousePos.x, bottom: window.innerHeight - mousePos.y }}
+      className={active ? 'active' : ''}
     ></div>
   );
 };

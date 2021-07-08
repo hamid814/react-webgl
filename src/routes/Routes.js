@@ -3,12 +3,14 @@ import { Transition } from 'react-transition-group';
 
 import Home from './home/Home';
 import Works from './works/Works';
+import Generate from './generate/Generate';
 
 import { enter, exit, animationDuration } from './animations';
 
-const routes = [
-  { path: '/', Component: Home },
-  { path: '/works', Component: Works },
+export const routes = [
+  { path: '/', Component: Home, name: 'Home' },
+  { path: '/works', Component: Works, name: 'Works' },
+  { path: '/generate', Component: Generate, name: 'Generate' },
 ];
 
 const Routes = () => {

@@ -1,32 +1,29 @@
-import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Navbar from './components/navbar/Navbar';
 import Mouse from './components/mouse/Mouse';
 import Canvas from './components/canvas/Canvas';
 
-import './App.css';
-
 import Routes from './routes/Routes';
 
+import './App.css';
+
+import useStore from './store/store';
+
 const App = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const setMousePos = useStore((state) => state.setMousePos);
 
   const documentMouseMove = (e) => {
     setMousePos({ x: e.clientX, y: e.clientY });
   };
 
-  const onWheel = (e) => {
-    // console.log(e.target);
-  };
-
   return (
-    <div onMouseMove={documentMouseMove} onWheel={onWheel}>
+    <div onMouseMove={documentMouseMove}>
       <BrowserRouter>
         <Canvas />
         <Navbar />
         <div className="container">
-          <Mouse pos={mousePos} />
+          <Mouse />
           <Routes />
         </div>
       </BrowserRouter>
