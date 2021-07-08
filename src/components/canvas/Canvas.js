@@ -1,18 +1,9 @@
 import { useEffect, useRef } from 'react';
-import {
-  Renderer,
-  Geometry,
-  Program,
-  Mesh,
-  Vec3,
-  Vec2,
-  Orbit,
-  Camera,
-} from 'ogl';
+import { Renderer, Geometry, Program, Mesh, Vec3, Vec2, Camera } from 'ogl';
 import vertex from './vert';
-import fragment from './frag1';
+import fragment from './frag';
 
-import './style.css';
+import './canvas.css';
 
 const Canvas = () => {
   const canvas = useRef();
@@ -32,10 +23,6 @@ const Canvas = () => {
 
     const camera = new Camera(gl);
     camera.position.set(0, 2, 4);
-
-    const controls = new Orbit(camera, {
-      target: new Vec3(0),
-    });
 
     const geometry = new Geometry(gl, {
       position: { size: 2, data: new Float32Array([-1, -1, 3, -1, -1, 3]) },
@@ -60,15 +47,17 @@ const Canvas = () => {
     function update(time) {
       renderer.render({ scene: mesh });
 
-      controls.update();
-
       program.uniforms.uTime.value = time / 1000;
 
       requestAnimationFrame(update);
     }
   }, []);
 
-  return <canvas ref={canvas}></canvas>;
+  return (
+    <div id="canvas-container">
+      <canvas ref={canvas}></canvas>
+    </div>
+  );
 };
 
 export default Canvas;
