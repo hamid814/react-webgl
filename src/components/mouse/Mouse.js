@@ -6,12 +6,13 @@ const Mouse = () => {
   const mousePos = useStore((state) => state.mousePos);
   const active = useStore((state) => state.mouseActive);
 
+  const style = {
+    left: mousePos.x,
+    bottom: window.innerHeight - mousePos.y,
+  };
+
   return (
-    <div
-      id="mouse"
-      style={{ left: mousePos.x, bottom: window.innerHeight - mousePos.y }}
-      className={active ? 'active' : ''}
-    ></div>
+    <div id="mouse" style={style} className={active ? 'active' : ''}></div>
   );
 };
 

@@ -7,18 +7,14 @@
   width: 40px;
   height: 25.2px;
   pointer-events: none;
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 255),
-    rgb(255, 255, 255)
-  );
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 0, 0));
   mix-blend-mode: difference;
   transform: scale(0.75);
   transition: transform 400ms;
 }
 
 #mouse.active {
-  transform: rotateZ(120deg) scale(2);
+  transform: rotateZ(120deg) scale(1);
 }
 
 #mouse:before,

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Renderer, Geometry, Program, Mesh, Vec3, Vec2, Camera } from 'ogl';
 import vertex from './vert';
-import fragment from './frag1';
+import fragment from './frag';
 
 import Stats from 'stats.js';
 
@@ -21,8 +21,8 @@ const Canvas = () => {
       canvas: canvas.current,
     });
 
-    // const stats = new Stats();
-    // document.body.appendChild(stats.dom);
+    const stats = new Stats();
+    document.body.appendChild(stats.dom);
 
     const gl = renderer.gl;
 
@@ -52,7 +52,7 @@ const Canvas = () => {
     function update(time) {
       renderer.render({ scene: mesh });
 
-      // stats.update();
+      stats.update();
 
       program.uniforms.uTime.value = time / 1000;
 
