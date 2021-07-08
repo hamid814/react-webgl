@@ -21,10 +21,59 @@
   cursor: none;
   font-family: 'Architectural', Georgia;
   /* font-family: 'Nirvana', Georgia; */
+  mix-blend-mode: difference;
+}
+
+#root::before {
+  content: '';
+  height: 300%;
+  width: 300%;
+  opacity: 0.4;
+  background-repeat: repeat;
+  position: fixed;
+  left: -50%;
+  top: -100%;
+  background-image: url('./assets/images/noise.png');
+  animation: grain 8s steps(10) infinite;
+  pointer-events: none;
 }
 
 .container {
   width: 100vw;
   min-height: 100vh;
   color: white;
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
 }

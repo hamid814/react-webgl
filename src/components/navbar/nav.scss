@@ -4,6 +4,7 @@
   bottom: calc(100vh - 110px);
   right: 0;
   mix-blend-mode: difference;
+  z-index: 1;
 
   span {
     margin-right: 40px;
