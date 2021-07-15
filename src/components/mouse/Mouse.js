@@ -6,8 +6,6 @@ const Mouse = () => {
   const mousePos = useStore((state) => state.mousePos);
   const active = useStore((state) => state.mouseActive);
 
-  console.log('mouse render');
-
   const style = {
     left: mousePos.x,
     bottom: window.innerHeight - mousePos.y,

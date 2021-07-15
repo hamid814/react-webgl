@@ -26,7 +26,6 @@ export const enter = (elem, path) => {
 };
 
 export const exit = (elem, path) => {
-  console.log('Exit:', path);
   gsap.fromTo(
     elem,
     { opacity: 1, duration: animationDuration / 1000 },

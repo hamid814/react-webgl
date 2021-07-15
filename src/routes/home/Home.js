@@ -1,15 +1,13 @@
 import { ReactComponent } from '../../assets/svg/Home.svg';
 
-import './home.scss';
+// import './home.scss';
 
 const Home = () => {
-  // console.log(svg);
-
   return (
     <div className="page" id="home">
-      {/* <div className="hero-container">
+      <div className="hero-container">
         <ReactComponent />
-      </div> */}
+      </div>
     </div>
   );
 };

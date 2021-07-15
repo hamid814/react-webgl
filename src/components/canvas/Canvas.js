@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Renderer, Geometry, Program, Mesh, Vec3, Vec2, Camera } from 'ogl';
 import vertex from './vert';
-import fragment from './frag1';
+import fragment from './frag';
 
 import Stats from 'stats.js';
 
