@@ -1,12 +1,17 @@
 import create from 'zustand';
 
-const useStore = create((set) => ({
+import { values } from '../components/canvas/Canvas';
+
+const useStore = create((set, get) => ({
   mousePos: { x: 0, y: 0 },
-  mouseActivePos: { x: 0, y: 0 },
   mouseActive: false,
-  setMousePos: (pos) => set(() => ({ mousePos: pos })),
+  setMousePos: (p) => {
+    values.mouse.x = p.x;
+    values.mouse.y = p.y;
+
+    return set(() => ({ mousePos: p }));
+  },
   setMouseActive: (a) => set(() => ({ mouseActive: a })),
-  setMouseActivePos: (a) => set(() => ({ mouseActivePos: a })),
 }));
 
 export default useStore;

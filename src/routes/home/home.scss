@@ -1,0 +1,57 @@
+.page#home {
+  .hero-container {
+    // border: 1px solid red;
+    position: absolute;
+    backdrop-filter: blur(0px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: sth 4000ms linear;
+    animation-delay: 3000ms;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      transform: scale(2);
+    }
+  }
+
+  path {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: HOMEPathAnim 4000ms;
+    animation-delay: 3000ms;
+  }
+}
+
+@keyframes sth {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  25% {
+    backdrop-filter: blur(3px);
+  }
+  80% {
+    backdrop-filter: blur(3px);
+  }
+  100% {
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes HOMEPathAnim {
+  0% {
+    stroke-dashoffset: 900;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}

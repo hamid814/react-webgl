@@ -21,14 +21,13 @@
   cursor: none;
   font-family: 'Architectural', Georgia;
   /* font-family: 'Nirvana', Georgia; */
-  mix-blend-mode: difference;
 }
 
 #root::before {
   content: '';
   height: 300%;
   width: 300%;
-  opacity: 0.4;
+  opacity: 0.6;
   background-repeat: repeat;
   position: fixed;
   left: -50%;

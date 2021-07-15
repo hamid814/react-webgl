@@ -11,6 +11,7 @@
   mix-blend-mode: difference;
   transform: scale(0.75);
   transition: transform 400ms;
+  z-index: 10;
 }
 
 #mouse.active {

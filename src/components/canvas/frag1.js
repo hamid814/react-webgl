@@ -6,14 +6,17 @@ precision highp float;
 #define SURF_DIST .001
 #define IOR 1.45
 #define LCD 0.02
-#define RFL_STEPS 6
+#define RFL_STEPS 3
 #define AA 1
 
 uniform vec3 camPos;
+uniform vec2 mouse;
 uniform vec3 boxSize;
+uniform vec2 resolution;
 uniform float morphPower;
 uniform float boxThickness;
-uniform vec2 resolution;
+uniform float boxFactor;
+uniform float sphereFactor;
 uniform float uTime;
 
 vec3 lights[2];
@@ -43,23 +46,31 @@ float sdPlane(vec3 p) {
   return d;
 }
 float sdBox(vec3 point, vec3 position, vec3 size) {
-  point.xz *= rotate(-uTime);
-  // point.xy *= rotate(3.1415 * 0.25);
   point += position;
   point = abs(point) - size;
-  float morphAmount = 0.1;
+  float morphAmount = 0.15;
   return length(max(point, 0.)) + min(max(point.x, max(point.y, point.z)), 0.) - morphAmount;
 }
 float sdSphere(vec3 p, float s) {
+  p.z *= 1.5;
   return length(p) - s;
 }
+float smin(float a, float b, float k) {
+  float h = clamp(0.5 + 0.5 * (b - a) / k, 0.0, 1.0);
+  return mix(b, a, h) - k * h * (1.0 - h);
+}
 float getDist(vec3 point) {
-  float box = sdBox(point, vec3(0.), boxSize);
+  point.xz *= rotate(-(mouse.x - (resolution.x / 2.0)) / resolution.x);
+  point.yz *= rotate((mouse.y - (resolution.y / 2.0)) / resolution.y);
+
+  float box = sdBox(point, vec3(0.), boxSize * boxFactor);
   // box = abs(box) - 0.4;
+  float sphere = sdSphere(point, 1.5 * sphereFactor);
   // float prism = sdHexPrism(point, vec2(1.5));
   // float plane = sdPlane(point);
 
-  return box;
+  // return box;
+  return smin(box, sphere, 0.1);
   // return max(plane, prism);
 }
 float rayMarch(vec3 ro, vec3 rd, float sign) {
