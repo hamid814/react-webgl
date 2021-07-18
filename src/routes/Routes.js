@@ -7,10 +7,12 @@ import Generate from './generate/Generate';
 
 import { enter, exit, animationDuration } from './animations';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 export const routes = [
-  { path: '/', Component: Home, name: 'Home' },
-  { path: '/works', Component: Works, name: 'Works' },
-  { path: '/generate', Component: Generate, name: 'Generate' },
+  { path: PUBLIC_URL + '/', Component: Home, name: 'Home' },
+  { path: PUBLIC_URL + '/works', Component: Works, name: 'Works' },
+  { path: PUBLIC_URL + '/generate', Component: Generate, name: 'Generate' },
 ];
 
 const Routes = () => {

@@ -1,6 +1,6 @@
 import { ReactComponent } from '../../assets/svg/Home.svg';
 
-// import './home.scss';
+import './home.scss';
 
 const Home = () => {
   return (

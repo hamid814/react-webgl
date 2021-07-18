@@ -41,14 +41,14 @@ float sdHexPrism(vec3 p, vec2 h) {
   return max(q.z - h.y, max((q.x * 0.866025 + q.y * 0.5), q.y) - h.x);
 }
 float sdPlane(vec3 p) {
-  // p.xz *= Rot(uTime);
-  float d = dot(p, normalize(vec3(0.0, 0.0, 1.0)));
+  // p.xz *= rotate(uTime);
+  float d = dot(p, normalize(vec3(0.0, 1.0, 0.0)));
   return d;
 }
 float sdBox(vec3 point, vec3 position, vec3 size) {
   point += position;
   point = abs(point) - size;
-  float morphAmount = 0.15;
+  float morphAmount = 0.05;
   return length(max(point, 0.)) + min(max(point.x, max(point.y, point.z)), 0.) - morphAmount;
 }
 float sdSphere(vec3 p, float s) {
@@ -64,14 +64,14 @@ float getDist(vec3 point) {
   point.yz *= rotate((mouse.y - (resolution.y / 2.0)) / resolution.y);
 
   float box = sdBox(point, vec3(0.), boxSize * boxFactor);
-  // box = abs(box) - 0.4;
+  // box = abs(box) - 0.2;
   float sphere = sdSphere(point, 1.5 * sphereFactor);
   // float prism = sdHexPrism(point, vec2(1.5));
   // float plane = sdPlane(point);
 
   // return box;
   return smin(box, sphere, 0.1);
-  // return max(plane, prism);
+  // return max(plane, box);
 }
 float rayMarch(vec3 ro, vec3 rd, float sign) {
   float dO = 0.;
@@ -229,8 +229,8 @@ void main() {
         vec3 refractionR = refract(rayDirection, normal, rIOR + LCD);
         vec3 refractionG = refract(rayDirection, normal, rIOR);
         vec3 refractionB = refract(rayDirection, normal, rIOR - LCD);
-        // power += getLight(point + refractionR, refractionR);
-        // power += getDiffuse(point, normal);
+        // power -= getLight(point + refractionR, refractionR);
+        // power -= getDiffuse(point, normal);
 
         Reflection rflR;
         rflR.power = 0.;

@@ -29,14 +29,15 @@ const Selectable = ({ children }) => {
       (e.nativeEvent.offsetY - itemPos.height / 2) / (itemPos.height / 2);
 
     gsap.to(e.target, {
-      x: xPer * 10,
-      y: yPer * 10,
+      x: xPer * 25,
+      y: yPer * 25,
       duration: 0.2,
     });
   };
 
   return (
     <span
+      style={{ overflow: 'hidden' }}
       onMouseEnter={onmouseenter}
       onMouseLeave={onmouseleave}
       onMouseMove={onmousemove}

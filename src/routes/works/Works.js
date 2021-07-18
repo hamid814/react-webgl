@@ -14,8 +14,9 @@ const Works = () => {
 
   return (
     <div className="page" id="works">
-      works
-      <WorksSVG />
+      <div className="hero-container">
+        <WorksSVG />
+      </div>
     </div>
   );
 };

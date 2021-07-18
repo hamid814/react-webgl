@@ -1,0 +1,55 @@
+.page#works {
+  .hero-container {
+    position: absolute;
+    backdrop-filter: blur(0px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: WORKSHeroBlur 4000ms linear;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    svg {
+      width: 70%;
+    }
+  }
+
+  path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: WORKSPathAnim 4000ms;
+  }
+}
+
+@keyframes WORKSHeroBlur {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  20% {
+    backdrop-filter: blur(2px);
+  }
+  80% {
+    backdrop-filter: blur(2px);
+    opacity: 1;
+  }
+  100% {
+    backdrop-filter: blur(0px);
+    opacity: 0;
+  }
+}
+
+@keyframes WORKSPathAnim {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  70% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
