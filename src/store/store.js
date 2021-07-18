@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-import { values } from '../components/canvas/Canvas';
+import { values } from '../components/layout/canvas/Canvas';
 
 const useStore = create((set, get) => ({
   mousePos: { x: 0, y: 0 },

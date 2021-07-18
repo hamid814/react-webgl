@@ -1,8 +1,8 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/layout/navbar/Navbar';
 import Mouse from './components/mouse/Mouse';
-import Canvas from './components/canvas/Canvas';
+import Canvas from './components/layout/canvas/Canvas';
 
 import Routes from './routes/Routes';
 

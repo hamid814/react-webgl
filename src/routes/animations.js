@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { values } from './../components/canvas/Canvas';
+import { values } from '../components/layout/canvas/Canvas';
 import { routes } from './Routes';
 
 export const animationDuration = 1000;

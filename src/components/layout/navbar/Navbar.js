@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { routesArray as routes } from '../../routes/Routes';
+import { routesArray as routes } from '../../../routes/Routes';
 
-import Selectable from '../selectable/Selectable';
+import Selectable from '../../selectable/Selectable';
 
 import './nav.scss';
 
