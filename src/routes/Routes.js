@@ -9,16 +9,22 @@ import { enter, exit, animationDuration } from './animations';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-export const routes = [
-  { path: PUBLIC_URL + '/', Component: Home, name: 'Home' },
-  { path: PUBLIC_URL + '/works', Component: Works, name: 'Works' },
-  { path: PUBLIC_URL + '/generate', Component: Generate, name: 'Generate' },
-];
+export const routes = {
+  home: { path: PUBLIC_URL + '/', Component: Home, name: 'Home' },
+  works: { path: PUBLIC_URL + '/works', Component: Works, name: 'Works' },
+  generate: {
+    path: PUBLIC_URL + '/generate',
+    Component: Generate,
+    name: 'Generate',
+  },
+};
+
+export const routesArray = Object.keys(routes).map((r) => routes[r]);
 
 const Routes = () => {
   return (
     <>
-      {routes.map(({ path, Component }) => (
+      {routesArray.map(({ path, Component }) => (
         <Route key={path} exact path={path}>
           {({ match }) => (
             <Transition

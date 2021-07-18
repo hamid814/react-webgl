@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { routes } from '../../routes/Routes';
+import { routesArray as routes } from '../../routes/Routes';
 
 import Selectable from '../selectable/Selectable';
 

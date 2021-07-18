@@ -1,16 +1,17 @@
 import gsap from 'gsap';
 import { values } from './../components/canvas/Canvas';
+import { routes } from './Routes';
 
 export const animationDuration = 1000;
 
 export const enter = (elem, path) => {
-  if (path === '/works') {
+  if (path === routes.works.path) {
     gsap.to(values, {
       duration: 2,
       boxFactor: 0.5,
       sphereFactor: 1,
     });
-  } else if (path === '/') {
+  } else if (path === routes.home.path) {
     gsap.to(values, {
       duration: 2,
       boxFactor: 1,
