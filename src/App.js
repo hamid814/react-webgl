@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/layout/navbar/Navbar';
 import Mouse from './components/mouse/Mouse';
 import Canvas from './components/layout/canvas/Canvas';
+import Template from './components/layout/template/Template';
 
 import Routes from './routes/Routes';
 
@@ -22,6 +23,7 @@ const App = () => {
       <BrowserRouter>
         <Canvas />
         <Navbar />
+        <Template />
         <div className="container">
           <Mouse />
           <Routes />
