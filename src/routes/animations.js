@@ -1,10 +1,16 @@
 import gsap from 'gsap';
 import { values } from '../components/layout/canvas/Canvas';
 import { routes } from './Routes';
+import useStore from './../store/store';
 
 export const animationDuration = 1000;
 
 export const enter = (elem, path) => {
+  const setTemplateReverse = useStore.getState().setTemplateReverse;
+  const isTemplateReverse = useStore.getState().isTemplateReverse;
+
+  setTemplateReverse(!isTemplateReverse);
+
   if (path === routes.works.path) {
     gsap.to(values, {
       duration: 2,

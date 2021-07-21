@@ -1,12 +1,12 @@
 #navbar {
   position: fixed;
   font-size: 45px;
-  bottom: calc(100vh - 140px);
+  bottom: calc(100vh - 130px);
   font-weight: bold;
   right: 20px;
   mix-blend-mode: difference;
   z-index: 1;
-  transform: rotateZ(3deg);
+  transform: rotateZ(2deg);
 
   span {
     margin-right: 20px;
