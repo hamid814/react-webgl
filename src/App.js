@@ -5,6 +5,8 @@ import Mouse from './components/mouse/Mouse';
 import Canvas from './components/layout/canvas/Canvas';
 import Template from './components/layout/template/Template';
 import Layer from './components/layout/layer/Layer';
+import MenuButton from './components/layout/menu/button/MenuButton';
+import MenuContainer from './components/layout/menu/container/MenuContainer';
 
 import Routes from './routes/Routes';
 
@@ -26,6 +28,8 @@ const App = () => {
         <Navbar />
         <Template />
         <Layer />
+        <MenuButton />
+        <MenuContainer />
         <div className="container">
           <Mouse />
           <Routes />
