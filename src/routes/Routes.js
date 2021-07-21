@@ -29,6 +29,7 @@ const Routes = () => {
           {({ match }) => (
             <Transition
               in={match != null}
+              appear={true}
               timeout={animationDuration}
               onEnter={(node, appear) => enter(node, path)}
               onExit={(node) => exit(node, path)}

@@ -1,13 +1,19 @@
 #navbar {
   position: fixed;
-  font-size: 70px;
-  bottom: calc(100vh - 110px);
-  right: 0;
+  font-size: 45px;
+  bottom: calc(100vh - 140px);
+  font-weight: bold;
+  right: 20px;
   mix-blend-mode: difference;
   z-index: 1;
+  transform: rotateZ(3deg);
 
   span {
-    margin-right: 40px;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 45px;
+    }
 
     a {
       text-decoration: none;

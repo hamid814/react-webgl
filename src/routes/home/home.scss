@@ -1,7 +1,6 @@
 .page#home {
   .hero-container {
     position: absolute;
-    // backdrop-filter: blur(0px);
     top: 0;
     bottom: 0;
     left: 0;
@@ -10,11 +9,12 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     pointer-events: none;
 
     svg {
-      width: 70%;
+      width: 50%;
+      margin-bottom: 300px;
     }
   }
 
@@ -26,18 +26,10 @@
 }
 
 @keyframes HOMEHeroBlur {
-  0% {
-    // backdrop-filter: blur(0px);
-  }
-  20% {
-    // backdrop-filter: blur(3px);
-  }
   80% {
-    // backdrop-filter: blur(3px);
     opacity: 1;
   }
   100% {
-    // backdrop-filter: blur(0px);
     opacity: 0;
   }
 }

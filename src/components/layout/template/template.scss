@@ -1,4 +1,6 @@
 #template {
+  --angle: 3deg;
+
   div {
     position: fixed;
     border-style: solid;
@@ -7,28 +9,36 @@
     z-index: 20;
   }
 
+  &.reverse {
+    --angle: -3deg;
+  }
+
   .top {
     top: 7%;
     left: 0;
     right: 0;
     border-bottom-width: 0.5px;
+    transform: rotateZ(var(--angle));
   }
   .bottom {
     bottom: 7%;
     left: 0;
     right: 0;
     border-top-width: 0.5px;
+    transform: rotateZ(-var(--angle));
   }
   .left {
-    left: 7%;
+    left: 4%;
     top: 0;
     bottom: 0;
     border-right-width: 0.5px;
+    transform: rotateZ(-var(--angle));
   }
   .right {
-    right: 7%;
+    right: 4%;
     top: 0;
     bottom: 0;
     border-left-width: 0.5px;
+    transform: rotateZ(var(--angle));
   }
 }

@@ -10,12 +10,24 @@ export const enter = (elem, path) => {
       duration: 2,
       boxFactor: 0.5,
       sphereFactor: 1,
+      ease: 'Power3.easeInOut',
+    });
+    gsap.to(document.getElementById('canvas-container'), {
+      duration: 2,
+      marginRight: '40%',
+      ease: 'Power3.easeInOut',
     });
   } else if (path === routes.home.path) {
     gsap.to(values, {
       duration: 2,
       boxFactor: 1,
       sphereFactor: 0.5,
+      ease: 'Power3.easeInOut',
+    });
+    gsap.to(document.getElementById('canvas-container'), {
+      duration: 2,
+      marginRight: '0%',
+      ease: 'Power3.easeInOut',
     });
   }
 

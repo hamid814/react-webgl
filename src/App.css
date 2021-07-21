@@ -13,6 +13,20 @@
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
+@font-face {
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Didot';
+  src: url('./assets/fonts/Didot-Bold.otf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
 
 * {
   margin: 0;
@@ -20,10 +34,16 @@
   box-sizing: border-box;
   cursor: none;
   font-family: 'Architectural', Georgia;
+  font-family: 'Didot', Georgia;
+
   /* font-family: 'Nirvana', Georgia; */
 }
 
-#root::before {
+#root {
+  background: #fff;
+}
+
+/* #root::before {
   content: '';
   height: 300%;
   width: 300%;
@@ -35,12 +55,12 @@
   background-image: url('./assets/images/noise.png');
   animation: grain 8s steps(10) infinite;
   pointer-events: none;
-}
+} */
 
 .container {
   width: 100vw;
   min-height: 100vh;
-  color: white;
+  /* background: #fff; */
 }
 
 @keyframes grain {

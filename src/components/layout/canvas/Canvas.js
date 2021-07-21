@@ -24,7 +24,7 @@ const Canvas = () => {
     }
 
     const renderer = new Renderer({
-      width: window.innerWidth,
+      width: window.innerWidth * 0.6,
       height: window.innerHeight,
       canvas: canvas.current,
     });
@@ -51,7 +51,9 @@ const Canvas = () => {
         mouse: { value: new Vec2(0) },
         boxSize: { value: new Vec3(1) },
         camPos: { value: new Vec3(0, 2, 5) },
-        resolution: { value: new Vec2(window.innerWidth, window.innerHeight) },
+        resolution: {
+          value: new Vec2(window.innerWidth * 0.6, window.innerHeight),
+        },
         boxFactor: { value: values.boxFactor },
         sphereFactor: { value: values.sphereFactor },
       },
@@ -60,9 +62,9 @@ const Canvas = () => {
     const mesh = new Mesh(gl, { geometry, program });
 
     window.addEventListener('resize', () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(window.innerWidth * 0.6, window.innerHeight);
       program.uniforms.resolution.value = new Vec2(
-        window.innerWidth,
+        window.innerWidth * 0.6,
         window.innerHeight
       );
     });
