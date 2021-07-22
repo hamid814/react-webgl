@@ -1,0 +1,69 @@
+#canvas-container {
+  position: fixed;
+  max-width: 60%;
+  right: 0;
+
+  .template {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    span {
+      --thickness: 20px;
+      position: absolute;
+      background: #6c9;
+      // background-image: repeating-linear-gradient(
+      //   45deg,
+      //   #000 0% 2%,
+      //   #0000 2% 4%
+      // );
+
+      &.top {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--thickness);
+        transform: rotateZ(-2deg) translateY(39px);
+      }
+      &.bottom {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: var(--thickness);
+        transform: rotateZ(2deg) translateY(-45px);
+      }
+      &.left {
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        width: var(--thickness);
+        transform: rotateZ(2deg);
+      }
+      &.right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: var(--thickness);
+        transform: rotateZ(-2deg) translateX(-57px);
+      }
+    }
+
+    #canvas-wrapper {
+      // position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // border: 1px solid red;
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

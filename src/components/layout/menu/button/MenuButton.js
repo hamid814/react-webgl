@@ -1,9 +1,20 @@
-import React from 'react';
+import Selectable from './../../../selectable/Selectable';
+
+import Canvas from '../../canvas/Canvas';
 
 import './menu-button.scss';
 
 const MenuButton = () => {
-  return <div id="menu-button"></div>;
+  const clickHandler = () => {
+    console.clear();
+    console.log(Canvas);
+  };
+
+  return (
+    <Selectable>
+      <div onClick={clickHandler} id="menu-button"></div>
+    </Selectable>
+  );
 };
 
 export default MenuButton;

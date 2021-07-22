@@ -1,5 +1,7 @@
 #template {
   --angle: 2deg;
+  --thickness: 3px;
+  opacity: 0.3;
 
   &.reverse {
     --angle: -2deg;
@@ -7,40 +9,62 @@
 
   div {
     position: fixed;
-    border-style: solid;
-    border-color: #000;
-    border-width: 0;
-    z-index: 20;
+    z-index: 10;
     transition: transform 600ms ease-in-out;
     transition-delay: 700ms;
+    background-image: linear-gradient(to right, #000, #000) !important;
   }
 
   .top {
+    height: var(--thickness);
     top: 7%;
     left: 0;
     right: 0;
-    border-bottom-width: 1px;
+    background-image: linear-gradient(
+      to right,
+      #000 0% 25%,
+      #0000 25% 75%,
+      #000 75% 100%
+    );
     transform: rotateZ(var(--angle));
   }
   .bottom {
+    height: var(--thickness);
     bottom: 7%;
     left: 0;
     right: 0;
-    border-top-width: 1px;
+    background-image: linear-gradient(
+      to right,
+      #000 0% 25%,
+      #0000 25% 75%,
+      #000 75% 100%
+    );
     transform: rotateZ(calc(var(--angle) * -1));
   }
   .left {
+    width: var(--thickness);
     left: 4%;
     top: 0;
     bottom: 0;
-    border-right-width: 1px;
+    background-image: linear-gradient(
+      to top,
+      #000 0% 25%,
+      #0000 25% 75%,
+      #000 75% 100%
+    );
     transform: rotateZ(calc(var(--angle) * -1));
   }
   .right {
+    width: var(--thickness);
     right: 4%;
     top: 0;
     bottom: 0;
-    border-left-width: 1px;
+    background-image: linear-gradient(
+      to top,
+      #000 0% 25%,
+      #0000 25% 75%,
+      #000 75% 100%
+    );
     transform: rotateZ(var(--angle));
   }
 }

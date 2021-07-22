@@ -48,7 +48,7 @@ float sdPlane(vec3 p) {
 float sdBox(vec3 point, vec3 position, vec3 size) {
   point += position;
   point = abs(point) - size;
-  float morphAmount = 0.05;
+  float morphAmount = 0.1;
   return length(max(point, 0.)) + min(max(point.x, max(point.y, point.z)), 0.) - morphAmount;
 }
 float sdSphere(vec3 p, float s) {
@@ -260,7 +260,7 @@ void main() {
         // for(int i = 0; i < RFL_STEPS; i++) {
         //   rflB = getReflection(rflB, i);
 
-        //   power.b -= rflB.power;
+        //   power.b -= rflB.power / 4.0;
         // }
         // power *= textureCube(bg, rflG.direction).rgb;
       } else {
@@ -274,7 +274,7 @@ void main() {
 #endif
 
   power = clamp(power, 0.0, 1.0);
-  // power = pow(power, vec3(0.4545));
+  power = pow(power, vec3(0.4545));
 
   gl_FragColor = vec4(power, 1.0);
 }

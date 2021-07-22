@@ -1,26 +1,4 @@
 @font-face {
-  font-family: 'Architectural';
-  src: url('./assets/fonts/Architectural.woff') format('woff'),
-    url('./assets/fonts/Architectural.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: 'Nirvana';
-  src: url('./assets/fonts/nirvana.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: 'Didot';
-  src: url('./assets/fonts/Didot-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
   font-family: 'Didot';
   src: url('./assets/fonts/Didot-Bold.otf') format('truetype');
   font-style: normal;
@@ -33,10 +11,10 @@
   padding: 0;
   box-sizing: border-box;
   cursor: none;
-  font-family: 'Architectural', Georgia;
-  font-family: 'Didot', Georgia;
+}
 
-  /* font-family: 'Nirvana', Georgia; */
+body {
+  font-family: 'Didot', Georgia;
 }
 
 #root {
@@ -55,12 +33,12 @@
   background-image: url('./assets/images/noise.png');
   animation: grain 8s steps(10) infinite;
   pointer-events: none;
+  z-index: 1;
 } */
 
 .container {
   width: 100vw;
   min-height: 100vh;
-  /* background: #fff; */
 }
 
 @keyframes grain {

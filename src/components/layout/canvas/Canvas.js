@@ -5,7 +5,7 @@ import fragment from './frag1';
 
 import Stats from 'stats.js';
 
-import './canvas.css';
+import './canvas.scss';
 
 export const values = {
   mouse: new Vec2(window.innerWidth / 2, window.innerHeight / 2),
@@ -89,7 +89,15 @@ const Canvas = () => {
 
   return (
     <div id="canvas-container">
-      <canvas ref={canvas}></canvas>
+      <div className="template">
+        <span className="top"></span>
+        <span className="bottom"></span>
+        <span className="left"></span>
+        <span className="right"></span>
+        <div id="canvas-wrapper">
+          <canvas ref={canvas}></canvas>
+        </div>
+      </div>
     </div>
   );
 };
