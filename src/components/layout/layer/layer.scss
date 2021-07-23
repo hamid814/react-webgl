@@ -1,30 +1,15 @@
 #layer {
-  // background-image: linear-gradient(to right, #044 50%, #fdd 50%);
-  background-image: linear-gradient(to right, #fff, #fff);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  mix-blend-mode: hard-light;
-  mix-blend-mode: lighten;
+  // background-image: linear-gradient(to right, #044 50%, #044 50%);
+  // background-image: linear-gradient(to right, #d8b370 50%, #d8b370 50%);
+  // background-image: linear-gradient(to right, #ff0, #ff0);
+  // background-image: linear-gradient(to right, #fff, #fff);
   mix-blend-mode: difference;
-  // animation: LAYERAnim 4000ms ease-in-out infinite;
+  // mix-blend-mode: darken;
   pointer-events: none;
   z-index: 100;
-}
-
-@keyframes LAYERAnim {
-  0% {
-    // height: 100vh;
-    opacity: 0;
-  }
-  75% {
-    // height: 0;
-    opacity: 1;
-  }
-  100% {
-    // height: 100vh;
-    opacity: 0;
-  }
 }

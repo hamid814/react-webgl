@@ -28,7 +28,7 @@ const App = () => {
     <div onMouseMove={documentMouseMove}>
       <BrowserRouter>
         <Canvas />
-        <Navbar />
+        {/* <Navbar /> */}
         <Template />
         <Layer />
         <MenuButton />

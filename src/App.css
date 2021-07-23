@@ -19,7 +19,7 @@ body {
 
 #root {
   background: #fff;
-  /* --angle: 0deg !important; */
+  --angle: 0deg !important;
 }
 
 #root::before {
@@ -35,6 +35,10 @@ body {
   animation: grain 8s steps(10) infinite;
   pointer-events: none;
   z-index: 1;
+}
+
+canvas {
+  /* display: none; */
 }
 
 .container {

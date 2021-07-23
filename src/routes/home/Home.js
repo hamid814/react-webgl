@@ -23,7 +23,7 @@ const Home = () => {
     }
   };
 
-  const scrollDebounce = debounce(scrollHander, 100);
+  const scrollDebounce = debounce(scrollHander, 50);
 
   return (
     <div className="page" id="home">
