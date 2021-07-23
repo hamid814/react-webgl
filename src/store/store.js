@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-import { values } from '../components/layout/canvas/Canvas';
+import { shader } from '../components/layout/canvas/Canvas';
 
 const useStore = create((set, get) => ({
   mousePos: { x: 0, y: 0 },
@@ -8,8 +8,8 @@ const useStore = create((set, get) => ({
   isTemplateReverse: false,
   isMenuOpen: false,
   setMousePos: (p) => {
-    values.mouse.x = p.x;
-    values.mouse.y = p.y;
+    shader.uniforms.mouse.value.x = p.x;
+    shader.uniforms.mouse.value.y = p.y;
 
     return set(() => ({ mousePos: p }));
   },

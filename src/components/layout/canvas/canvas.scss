@@ -1,7 +1,8 @@
 #canvas-container {
   position: fixed;
-  max-width: 60%;
-  right: 0;
+  width: 60%;
+  height: 100%;
+  left: 40%;
 
   .template {
     position: relative;
@@ -12,54 +13,51 @@
     left: 0;
     right: 0;
 
-    span {
-      --thickness: 20px;
-      position: absolute;
-      background: #6c9;
-      // background-image: repeating-linear-gradient(
-      //   45deg,
-      //   #000 0% 2%,
-      //   #0000 2% 4%
-      // );
+    div {
+      div {
+        --thickness: 20px;
+        border: 1px solid red;
+        position: absolute;
+        transition: transform 600ms ease-in-out;
+        // transition-delay: 700ms;
+        background-image: repeating-linear-gradient(
+          45deg,
+          #f00 0% 2%,
+          #0ff 2% 4%
+        );
 
-      &.top {
-        top: 0;
-        left: 0;
-        right: 0;
-        height: var(--thickness);
-        transform: rotateZ(-2deg) translateY(39px);
-      }
-      &.bottom {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: var(--thickness);
-        transform: rotateZ(2deg) translateY(-45px);
-      }
-      &.left {
-        top: 0px;
-        bottom: 0;
-        left: 0;
-        width: var(--thickness);
-        transform: rotateZ(2deg);
-      }
-      &.right {
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: var(--thickness);
-        transform: rotateZ(-2deg) translateX(-57px);
+        &.top {
+          top: 7%;
+          left: 0;
+          right: 0;
+          height: var(--thickness);
+          transform: rotateZ(var(--angle));
+        }
+        &.bottom {
+          bottom: 8%;
+          left: 0;
+          right: 0;
+          height: var(--thickness);
+          transform: rotateZ(calc(-1 * var(--angle)));
+        }
+        &.left {
+          top: 0;
+          bottom: 0;
+          left: 7%;
+          width: var(--thickness);
+          transform: rotateZ(calc(-1 * var(--angle)));
+        }
+        &.right {
+          top: 0;
+          bottom: 0;
+          right: 7%;
+          width: var(--thickness);
+          transform: rotateZ(var(--angle));
+        }
       }
     }
 
     #canvas-wrapper {
-      // position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      // border: 1px solid red;
-
       canvas {
         width: 100%;
         height: 100%;

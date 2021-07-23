@@ -25,7 +25,7 @@ body {
   content: '';
   height: 300%;
   width: 300%;
-  opacity: 0.6;
+  opacity: 0.5;
   background-repeat: repeat;
   position: fixed;
   left: -50%;
@@ -39,6 +39,62 @@ body {
 .container {
   width: 100vw;
   min-height: 100vh;
+}
+
+#first {
+  position: fixed;
+  left: 0;
+  top: 7%;
+  width: 100%;
+  height: 2px;
+  background: #f00;
+  z-index: 1000;
+  /* animation: sthsthsth 4000ms linear infinite; */
+  transform: rotateZ(var(--angle));
+  transition: transform 600ms ease-in-out;
+  /* transform-origin: 0 0; */
+}
+
+#second-container {
+  /* border: 5px solid #0ff; */
+  position: fixed;
+  width: 60%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#second-wrapper {
+  /* border: 5px solid #00f; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#second {
+  position: absolute;
+  left: 0;
+  top: calc(7% - 9px);
+  width: 100%;
+  background: #0ff;
+  height: 10px;
+  z-index: 1000;
+  /* animation: sthsthsth 4000ms linear infinite; */
+  transform: rotateZ(var(--angle));
+  transition: transform 600ms ease-in-out;
+  /* transform-origin: -100px -40px; */
+}
+
+@keyframes sthsthsth {
+  0% {
+    transform: rotateZ(2deg);
+  }
+  50% {
+    transform: rotateZ(-2deg);
+  }
+  100% {
+    transform: rotateZ(2deg);
+  }
 }
 
 @keyframes grain {

@@ -1,15 +1,22 @@
 import './template.scss';
 import useStore from './../../../store/store';
+import Rotated from './../../rotated/Rotated';
 
 const Template = () => {
-  const isTemplateReverse = useStore((state) => state.isTemplateReverse);
-
   return (
-    <div id="template" className={isTemplateReverse ? 'reverse' : ''}>
-      <div className="top"></div>
-      <div className="bottom"></div>
-      <div className="right"></div>
-      <div className="left"></div>
+    <div id="template">
+      <Rotated>
+        <div className="top"></div>
+      </Rotated>
+      <Rotated>
+        <div className="bottom"></div>
+      </Rotated>
+      <Rotated>
+        <div className="right"></div>
+      </Rotated>
+      <Rotated>
+        <div className="left"></div>
+      </Rotated>
     </div>
   );
 };
