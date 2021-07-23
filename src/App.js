@@ -14,7 +14,6 @@ import './App.css';
 
 import useStore from './store/store';
 import { onLoad } from './utils/onload';
-import Rotated from './components/rotated/Rotated';
 
 const App = () => {
   const setMousePos = useStore((state) => state.setMousePos);
@@ -29,24 +28,14 @@ const App = () => {
     <div onMouseMove={documentMouseMove}>
       <BrowserRouter>
         <Canvas />
-        {/* <Navbar /> */}
+        <Navbar />
         <Template />
         <Layer />
-        {/* <MenuButton /> */}
-        {/* <MenuContainer /> */}
+        <MenuButton />
+        <MenuContainer />
         <div className="container">
           <Mouse />
           <Routes />
-          {/* <Rotated>
-            <div id="first"></div>
-          </Rotated> */}
-          {/* <div id="second-container">
-            <div id="second-wrapper">
-              <Rotated>
-                <div id="second"></div>
-              </Rotated>
-            </div>
-          </div> */}
         </div>
       </BrowserRouter>
     </div>

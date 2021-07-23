@@ -15,27 +15,21 @@
 
     div {
       div {
-        --thickness: 20px;
-        border: 1px solid red;
+        --thickness: 10px;
         position: absolute;
         transition: transform 600ms ease-in-out;
-        // transition-delay: 700ms;
-        background-image: repeating-linear-gradient(
-          45deg,
-          #f00 0% 2%,
-          #0ff 2% 4%
-        );
+        background-color: #ddd;
 
         &.top {
-          top: 7%;
-          left: 0;
+          top: 5%;
+          left: -60%;
           right: 0;
           height: var(--thickness);
           transform: rotateZ(var(--angle));
         }
         &.bottom {
-          bottom: 8%;
-          left: 0;
+          bottom: 5%;
+          left: -60%;
           right: 0;
           height: var(--thickness);
           transform: rotateZ(calc(-1 * var(--angle)));
@@ -43,14 +37,14 @@
         &.left {
           top: 0;
           bottom: 0;
-          left: 7%;
+          left: 15%;
           width: var(--thickness);
           transform: rotateZ(calc(-1 * var(--angle)));
         }
         &.right {
           top: 0;
           bottom: 0;
-          right: 7%;
+          right: calc(8% + 2px);
           width: var(--thickness);
           transform: rotateZ(var(--angle));
         }

@@ -1,5 +1,4 @@
 import './template.scss';
-import useStore from './../../../store/store';
 import Rotated from './../../rotated/Rotated';
 
 const Template = () => {

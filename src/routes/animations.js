@@ -18,6 +18,7 @@ export const enter = (elem, path) => {
     .style.setProperty('--angle', isTemplateReverse ? '-2deg' : '2deg');
 
   if (path === routes.works.path) {
+    // send this function to the end of call stack so that the shader is rendered
     setTimeout(() => {
       gsap.to(shader.uniforms.boxFactor, {
         duration: 2,
@@ -36,6 +37,7 @@ export const enter = (elem, path) => {
     //   ease: 'Power3.easeInOut',
     // });
   } else if (path === routes.home.path) {
+    // send this function to the end of call stack so that the shader is rendered
     setTimeout(() => {
       gsap.to(shader.uniforms.boxFactor, {
         duration: 2,

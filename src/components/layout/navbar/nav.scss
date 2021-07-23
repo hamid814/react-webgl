@@ -6,7 +6,8 @@
   right: 20px;
   mix-blend-mode: difference;
   z-index: 1;
-  transform: rotateZ(2deg);
+  transform: rotateZ(var(--angle));
+  transition: transform 600ms ease-in;
 
   span {
     margin-right: 20px;

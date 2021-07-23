@@ -1,5 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { Renderer, Geometry, Program as ShaderProgram, Mesh, Vec3, Vec2, Camera } from 'ogl';
+import {
+  Renderer,
+  Geometry,
+  Program as ShaderProgram,
+  Mesh,
+  Vec3,
+  Vec2,
+  Camera,
+} from 'ogl';
 import vertex from './vert';
 import fragment from './frag1';
 
@@ -7,7 +15,6 @@ import Stats from 'stats.js';
 
 import './canvas.scss';
 import Rotated from './../../rotated/Rotated';
-
 
 export const uniforms = {
   uTime: { value: 0 },
@@ -23,7 +30,6 @@ export const uniforms = {
 
 // to change its unifroms from out side
 export let shader;
-
 
 const Canvas = () => {
   const canvas = useRef();
@@ -59,7 +65,7 @@ const Canvas = () => {
       uniforms,
     });
 
-    const mesh = new Mesh(gl, { geometry, shader });
+    const mesh = new Mesh(gl, { geometry, program: shader });
 
     window.addEventListener('resize', () => {
       renderer.setSize(window.innerWidth * 0.6, window.innerHeight);
